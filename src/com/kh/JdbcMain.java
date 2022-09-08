@@ -1,34 +1,34 @@
 package com.kh;
 
 import com.kh.util.Common;
-
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
-//수정수정테스트11
 public class JdbcMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
         try {
             conn = Common.getConnection();
             stmt = conn.createStatement();
-            String sql = "SELECT * FROM EMP";
+            String sql = "SELECT * FROM MEMBER";
             rs = stmt.executeQuery(sql);
 
             System.out.println(rs);
             while(rs.next()) {
-                System.out.print(rs.getInt("EMPNO") + " ");
-                System.out.print(rs.getString("ENAME") + " ");
-                System.out.print(rs.getString("JOB") + " ");
-                System.out.print(rs.getInt("MGR") + " ");
-                System.out.print(rs.getDate("HIREDATE") + " ");
-                System.out.print(rs.getDouble("SAL") + " ");
-                System.out.print(rs.getDouble("COMM") + " ");
-                System.out.print(rs.getInt("DEPTNO") + " ");
+                System.out.print(rs.getInt("MEMBER_NUM") + " ");
+                System.out.print(rs.getString("ID") + " ");
+                System.out.print(rs.getString("PASSWORD") + " ");
+                System.out.print(rs.getString("NAME") + " ");
+                System.out.print(rs.getDate("BIRTH") + " ");
+                System.out.print(rs.getString("GENDER") + " ");
+                System.out.print(rs.getString("EMAIL") + " ");
+                System.out.print(rs.getString("PHONE") + " ");
+                System.out.print(rs.getString("RECOMMENDER_ID") + " ");
+                System.out.print(rs.getDate("REG_DATE") + " ");
                 System.out.println();
             }
 
