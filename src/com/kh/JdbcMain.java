@@ -7,7 +7,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-//수정수정테스트
+//수정수정테스트11
 public class JdbcMain {
     public static void main(String[] args) {
         Connection conn = null;
